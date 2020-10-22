@@ -1,0 +1,57 @@
+site_name: Veracode Open Source
+site_description: 'Veracode Open Source'
+site_author: 'Veracode'
+docs_dir: docs/
+repo_name: 'Veracode-Community-Projects'
+repo_url: 'https://github.com/veracode/Veracode-Community-Projects/'
+theme:
+  name: 'material'
+  features:
+    - navigation.instant
+  logo: assets/images/favicon.ico
+  favicon: assets/images/favicon.ico
+nav:
+    - Home: index.md
+    - Offical Projects: official/official.md
+    - Community Projects:
+        - SDK:
+            - API Wrapper Libraries: community/sdk/api-wrappers.md
+            - CLI Tools: community/sdk/cli.md
+            - HMAC Signing Libraries: community/sdk/hmac-signing-libraries.md
+        - CI/CD:
+            - Ansible: community/ci-cd/ansible.md
+            - Azure Devops: community/ci-cd/azuredevops.md
+            - Bamboo: community/ci-cd/bamboo.md
+            - BitriseCI: community/ci-cd/bitrise-ci.md
+            - CircleCI: community/ci-cd/circle-ci.md
+            - ConcourseCI: community/ci-cd/concourse-ci.md
+            - Docker: community/ci-cd/docker.md
+            - GitLab: community/ci-cd/gitlab.md
+            - Gradle: community/ci-cd/gradle.md
+            - Jenkins: community/ci-cd/jenkins.md
+            - sbt: community/ci-cd/sbt.md
+            - Travis: community/ci-cd/travis.md
+            - Xebia Labs: community/ci-cd/xebia-labs.md
+        - IDE:
+            - VsCode: community/ide/vscode.md
+        - Testing Tools:
+            - Insomnia: community/testing-tools/insomnia.md
+            - Postman: community/testing-tools/postman.md
+        - Utility:
+            - Administration: community/utility/administration.md
+        - Workflow:
+            - Flowdock: community/workflow/flowdock.md
+            - Slack: community/workflow/slack.md
+            - Notifications: community/workflow/notifications.md
+    - Resources:
+        - Insecure Applications: resources/insecure-applications.md
+        - Secure Coding Examples: resources/secure-coding-samples.md
+    - Veracode Community: "https://community.veracode.com/"
+extra_css:
+    - css/extra.css
+    - css/font-awesome.min.css
+extra_javascript:
+    - js/extra.js
+plugins:
+    - search:
+        separator: '[\s\-\.]+'
