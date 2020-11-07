@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<style>
+    body {
+        background: url('{{ site.baseurl }}/assets/images/header_bg.png') no-repeat center center fixed;
+        background-color: black;
+        background-size: 100% 100%;    }
+</style>
+<html>
+
+  {% include head.html %}
+
+<body>
+
+    {% include header.html %}
+    <style>
+        .page-content {
+            background-color: white;
+        }
+    </style>
+    <div class="page-content">
+        <div class="wrapper">
+            {{ content }}
+        </div>
+    </div>
+
+    {% include twitter.html %}
+    {% include footer.html %}
+
+</body>
+
+</html>

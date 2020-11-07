@@ -1,0 +1,15 @@
+# Site settings
+title: Veracode Open Source
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  A collection of useful open source projects that integrate with the Veracode APIs to automate scanning, results retrieval and other tasks.
+url: "http://sebcoles.github.io" # the base hostname & protocol for your site
+github_username: veracode
+twitter_username: veracode
+
+# Build settings
+markdown: kramdown
+permalink: /:title:output_ext
+
+collections:
+  - projects
