@@ -22,44 +22,9 @@ layout: default
         <div class="row">
 
             {% for project in site.projects %}
-            {% if project.content-type == "sdk" %}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>
-                            <a class="post-link" href="{{ project.repolink }}">{{ project.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    {% if project.language != "" %}
-                    <div class="col-sm-2">
-                        <span><i style="font-size:40px" class="fab fa-{{ project.language }}"></i></span>
-                    </div>
-                    {% endif %}
-                    <div class="col-sm-9">
-                        {% if project.repo == "github" %}
-                        <a class="post-link" href="{{ project.repolink }}/star">
-                            <span><i style="font-size:35px" class="fa fa-star"></i></span>
-                            <span id="{{ project.repo_title | replace: ".", "" }}_count"><i style="font-size:40px"></i></span>
-                            <script>
-                                $(function () {
-                                    $.getJSON("https://api.github.com/repos/{{ project.author }}/{{ project.repo_title }}/stargazers", function (response) {
-                                        $("#{{ project.repo_title | replace: ".", "" }}_count").text(response.length);
-                                    });
-                                });
-                            </script>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="margin-bottom:2px">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
+                {% if project.content-type == "sdk" %}
+                    {% include project.html project=project %}
+                {% endif %}
             {% endfor %}
 
         </div>
@@ -77,45 +42,9 @@ layout: default
         <div class="row">
 
             {% for project in site.projects %}
-            {% if project.content-type == "ci/cd" %}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2>
-                            <a class="post-link" href="{{ project.repolink }}">{{ project.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    {% if project.language != "" %}
-                    <div class="col-sm-2">
-                        <span><i style="font-size:40px" class="fab fa-{{ project.language }}"></i></span>
-                    </div>
-                    {% endif %}
-                    <div class="col-sm-9">
-                        {% if project.repo == "github" %}
-                        <a class="post-link" href="{{ project.repolink }}/star">
-                            <span><i style="font-size:35px" class="fa fa-star"></i></span>
-                            <span id="{{ project.repo_title }}_count"><i style="font-size:40px"></i></span>
-                            <script>
-                                $(function () {
-                                    $.getJSON("https://api.github.com/repos/{{ project.author }}/{{ project.repo_title }}/stargazers", function (response) {
-                                        $("#{{ project.repo_title }}_count").text(response.length);
-                                    });
-                                });
-                            </script>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="margin-bottom:2px">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
+                {% if project.content-type == "ci/cd" %}
+                    {% include project.html project=project %}
+                {% endif %}
             {% endfor %}
 
         </div>
@@ -130,45 +59,9 @@ layout: default
         <div class="row">
 
             {% for project in site.projects %}
-            {% if project.content-type == "ide" %}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2>
-                            <a class="post-link" href="{{ project.repolink }}">{{ project.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    {% if project.language != "" %}
-                    <div class="col-sm-2">
-                        <span><i style="font-size:40px" class="fab fa-{{ project.language }}"></i></span>
-                    </div>
-                    {% endif %}
-                    <div class="col-sm-9">
-                        {% if project.repo == "github" %}
-                        <a class="post-link" href="{{ project.repolink }}/star">
-                            <span><i style="font-size:35px" class="fa fa-star"></i></span>
-                            <span id="{{ project.repo_title }}_count"><i style="font-size:40px"></i></span>
-                            <script>
-                                $(function () {
-                                    $.getJSON("https://api.github.com/repos/{{ project.author }}/{{ project.repo_title }}/stargazers", function (response) {
-                                        $("#{{ project.repo_title }}_count").text(response.length);
-                                    });
-                                });
-                            </script>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="margin-bottom:2px">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
+                {% if project.content-type == "ide" %}
+                    {% include project.html project=project %}
+                {% endif %}
             {% endfor %}
 
         </div>
@@ -182,45 +75,9 @@ layout: default
         <div class="row">
 
             {% for project in site.projects %}
-            {% if project.content-type == "workflow" %}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2>
-                            <a class="post-link" href="{{ project.repolink }}">{{ project.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    {% if project.language != "" %}
-                    <div class="col-sm-2">
-                        <span><i style="font-size:40px" class="fab fa-{{ project.language }}"></i></span>
-                    </div>
-                    {% endif %}
-                    <div class="col-sm-9">
-                        {% if project.repo == "github" %}
-                        <a class="post-link" href="{{ project.repolink }}/star">
-                            <span><i style="font-size:35px" class="fa fa-star"></i></span>
-                            <span id="{{ project.repo_title }}_count"><i style="font-size:40px"></i></span>
-                            <script>
-                                $(function () {
-                                    $.getJSON("https://api.github.com/repos/{{ project.author }}/{{ project.repo_title }}/stargazers", function (response) {
-                                        $("#{{ project.repo_title }}_count").text(response.length);
-                                    });
-                                });
-                            </script>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="margin-bottom:2px">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
+                {% if project.content-type == "workflow" %}
+                    {% include project.html project=project %}
+                {% endif %}
             {% endfor %}
 
         </div>
@@ -234,45 +91,9 @@ layout: default
         <div class="row">
 
             {% for project in site.projects %}
-            {% if project.content-type == "results" %}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2>
-                            <a class="post-link" href="{{ project.repolink }}">{{ project.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    {% if project.language != "" %}
-                    <div class="col-sm-2">
-                        <span><i style="font-size:40px" class="fab fa-{{ project.language }}"></i></span>
-                    </div>
-                    {% endif %}
-                    <div class="col-sm-9">
-                        {% if project.repo == "github" %}
-                        <a class="post-link" href="{{ project.repolink }}/star">
-                            <span><i style="font-size:35px" class="fa fa-star"></i></span>
-                            <span id="{{ project.repo_title }}_count"><i style="font-size:40px"></i></span>
-                            <script>
-                                $(function () {
-                                    $.getJSON("https://api.github.com/repos/{{ project.author }}/{{ project.repo_title }}/stargazers", function (response) {
-                                        $("#{{ project.repo_title | replace: ".", "\\." }}_count").text(response.length);
-                                    });
-                                });
-                            </script>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="margin-bottom:2px">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
+                {% if project.content-type == "results" %}
+                    {% include project.html project=project %}
+                {% endif %}
             {% endfor %}
 
         </div>
@@ -287,45 +108,9 @@ layout: default
         <div class="row">
 
             {% for project in site.projects %}
-            {% if project.content-type == "scripts" %}
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2>
-                            <a class="post-link" href="{{ project.repolink }}">{{ project.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    {% if project.language != "" %}
-                    <div class="col-sm-2">
-                        <span><i style="font-size:40px" class="fab fa-{{ project.language }}"></i></span>
-                    </div>
-                    {% endif %}
-                    <div class="col-sm-9">
-                        {% if project.repo == "github" %}
-                        <a class="post-link" href="{{ project.repolink }}/star">
-                            <span><i style="font-size:35px" class="fa fa-star"></i></span>
-                            <span id="{{ project.repo_title }}_count"><i style="font-size:40px"></i></span>
-                            <script>
-                                $(function () {
-                                    $.getJSON("https://api.github.com/repos/{{ project.author }}/{{ project.repo_title }}/stargazers", function (response) {
-                                        $("#{{ project.repo_title }}_count").text(response.length);
-                                    });
-                                });
-                            </script>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="margin-bottom:2px">{{ project.description }}</p>
-                    </div>
-                </div>
-                </div>
-            {% endif %}
+                {% if project.content-type == "scripts" %}
+                    {% include project.html project=project %}
+                {% endif %}
             {% endfor %}
 
         </div>
@@ -339,48 +124,9 @@ layout: default
         <div class="row">
 
             {% for project in site.projects %}
-            {% if project.content-type == "resources" %}
-
-            {% include project.html project=project %}
-
-           <!--  <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h2>
-                            <a class="post-link" href="{{ project.repolink }}">{{ project.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-                <div class="row">
-                    {% if project.language != "" %}
-                    <div class="col-sm-2">
-                        <span><i style="font-size:40px" class="fab fa-{{ project.language }}"></i></span>
-                    </div>
-                    {% endif %}
-                    <div class="col-sm-9">
-                        {% if project.repo == "github" %}
-                        <a class="post-link" href="{{ project.repolink }}/star">
-                            <span><i style="font-size:35px" class="fa fa-star"></i></span>
-                            <span id="{{ project.repo_title }}_count"><i style="font-size:40px"></i></span>
-                            <script>
-                                $(function () {
-                                    $.getJSON("https://api.github.com/repos/{{ project.author }}/{{ project.repo_title }}/stargazers", function (response) {
-                                        $("#{{ project.repo_title }}_count").text(response.length);
-                                    });
-                                });
-                            </script>
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p style="margin-bottom:2px">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
- -->            {% endif %}
+                {% if project.content-type == "resources" %}
+                    {% include project.html project=project %}
+                {% endif %}
             {% endfor %}
 
         </div>
