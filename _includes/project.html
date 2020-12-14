@@ -1,4 +1,4 @@
-g<div class="col-md-6">
+<div class="col-md-6">
   <div class="row">
     <div class="col-md-12">
       <h2>
@@ -32,7 +32,7 @@ g<div class="col-md-6">
             let github_stars = "https://api.github.com/repos/{{ include.project.author }}/{{ include.project.repo_title }}/stargazers";
             if (localStorage.getItem(title)) {
               var count = localStorage.getItem(title);
-              $(title).text(response.length);
+              $(title).text(count);
             } else {
               $.getJSON(github_stars, function (response) {
                   $(title).text(response.length);
