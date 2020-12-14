@@ -28,10 +28,8 @@ g<div class="col-md-6">
         ></span>
         <script>
           $(function () {
-ithub
             let title = "#{{ include.project.repo_title }}_count";
-            let github_stars = "https://api.github.com/repos/{{ include.project.author }}/{{ include.project.repo_title }}/stargazers"
-
+            let github_stars = "https://api.github.com/repos/{{ include.project.author }}/{{ include.project.repo_title }}/stargazers";
             if (localStorage.getItem(title)) {
               var count = localStorage.getItem(title);
               $(title).text(response.length);
@@ -39,8 +37,7 @@ ithub
               $.getJSON(github_stars, function (response) {
                   $(title).text(response.length);
                   localStorage.setItem(title, response.length);
-                }
-              );
+                });
             }
           });
         </script>
