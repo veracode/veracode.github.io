@@ -28,14 +28,17 @@
         ></span>
         <script>
           $(function () {
-            $.getJSON(
-              "https://api.github.com/repos/{{ include.project.author }}/{{ include.project.repo_title }}/stargazers",
-              function (response) {
-                $("#{{ include.project.repo_title }}_count").text(
-                  response.length
-                );
-              }
-            );
+            let title = "#{{ include.project.repo_title }}_count";
+            let github_stars = "https://api.github.com/repos/{{ include.project.author }}/{{ include.project.repo_title }}/stargazers";
+            if (localStorage.getItem(title)) {
+              var count = localStorage.getItem(title);
+              $(title).text(count);
+            } else {
+              $.getJSON(github_stars, function (response) {
+                  $(title).text(response.length);
+                  localStorage.setItem(title, response.length);
+                });
+            }
           });
         </script>
       </a>
