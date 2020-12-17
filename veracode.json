@@ -1,0 +1,58 @@
+{
+  "application_profiles": [
+    {
+      "application_name": "Veracode OSS Github IO Page",
+      "criticality": "Very High",
+      "business_owner": "seb",
+      "business_owner_email": "scoles@veracode.com",
+      "upload": [
+        {
+          "location": "veracode.tar.gz"
+        }
+      ],
+      "modules": [
+        {
+          "module_name": "JS files within veracode.tar.gz",
+          "entry_point": "true"
+        }
+      ],
+      "policy": {
+        "custom_severities": [
+          {
+            "cwe": 0,
+            "severity": 0
+          }
+        ],
+        "finding_rules": [
+          {
+            "scan_type": ["STATIC"],
+            "type": "FAIL_ALL",
+            "value": "string"
+          }
+        ],
+        "scan_frequency_rules": [
+          {
+            "frequency": "NOT_REQUIRED",
+            "scan_type": "STATIC"
+          }
+        ],
+        "sev0_grace_period": 0,
+        "sev1_grace_period": 0,
+        "sev2_grace_period": 0,
+        "sev3_grace_period": 0,
+        "sev4_grace_period": 0,
+        "sev5_grace_period": 0
+      },
+      "users": [
+        {
+          "first_name": "Seb",
+          "last_name": "Coles",
+          "email_address": "scoles@veracode.com",
+          "roles": "Creator, Any Scan"
+        }
+      ],
+      "sandboxes": [],
+      "mitigations": []
+    }
+  ]
+}
