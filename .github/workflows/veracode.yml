@@ -1,0 +1,30 @@
+name: Veracode Scan
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Configure Application Profile in Veracode
+        uses: sebcoles/action-declare-configure@v1
+        env:
+          VERACODE_API_KEY_ID: ${{ secrets.VERACODE_API_KEY_ID }}
+          VERACODE_API_KEY_SECRET: ${{ secrets.VERACODE_API_KEY_SECRET }} 
+        with:
+          configuration-file: "veracode.json"
+      - name: Prepare artifacts for scanning
+        shell: bash
+        run: |
+            cp -R . "../veracode"
+            tar czvf veracode.tar.gz "../veracode"
+      - name: Upload and Scan artifacts with Veracode
+        uses: sebcoles/action-declare-scan@v1
+        env:
+          VERACODE_API_KEY_ID: ${{ secrets.VERACODE_API_KEY_ID }}
+          VERACODE_API_KEY_SECRET: ${{ secrets.VERACODE_API_KEY_SECRET }} 
+        with:
+          configuration-file: "veracode.json"
