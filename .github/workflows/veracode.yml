@@ -28,10 +28,3 @@ jobs:
           VERACODE_API_KEY_SECRET: ${{ secrets.VERACODE_API_KEY_SECRET }} 
         with:
           configuration-file: "veracode.json"
-      - name: Evaluate if application passes Veracode policy
-        uses: sebcoles/action-declare-evaluate@v1
-        env:
-          VERACODE_API_KEY_ID: ${{ secrets.VERACODE_API_KEY_ID }}
-          VERACODE_API_KEY_SECRET: ${{ secrets.VERACODE_API_KEY_SECRET }} 
-        with:
-          configuration-file: "veracode.json"
