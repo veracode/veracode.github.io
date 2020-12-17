@@ -3,8 +3,8 @@
     {
       "application_name": "Veracode OSS Github IO Page",
       "criticality": "Very High",
-      "business_owner": "seb",
-      "business_owner_email": "scoles@veracode.com",
+      "business_owner": "Jam",
+      "business_owner_email": "jam@veracode.com",
       "upload": [
         {
           "location": "veracode.tar.gz"
@@ -43,14 +43,7 @@
         "sev4_grace_period": 0,
         "sev5_grace_period": 0
       },
-      "users": [
-        {
-          "first_name": "Seb",
-          "last_name": "Coles",
-          "email_address": "scoles@veracode.com",
-          "roles": "Creator, Any Scan"
-        }
-      ],
+      "users": [],
       "sandboxes": [],
       "mitigations": []
     }
