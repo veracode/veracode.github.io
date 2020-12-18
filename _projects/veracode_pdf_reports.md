@@ -8,5 +8,5 @@ author-link: "https://github.com/jphillips-vc/"
 content-type: "scripts"
 language: "python"
 repo: "github"
-repo_title: "Veracode_PDF_Reports"
+repo_title: "veracode-pdf-reports"
 ---
