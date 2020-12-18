@@ -8,5 +8,5 @@ author-link: "https://github.com/tjarrettveracode"
 content-type: "scripts"
 language: "python"
 repo: "github"
-repo_title: "Veracode_Scan_Counts"
+repo_title: "veracode-scan-counts"
 ---

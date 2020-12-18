@@ -8,5 +8,5 @@ author-link: "https://github.com/tjarrettveracode/"
 content-type: "scripts"
 language: ""
 repo: "github"
-repo_title: "Veracode_Policy_Examples"
+repo_title: "veracode-policy-examples"
 ---
