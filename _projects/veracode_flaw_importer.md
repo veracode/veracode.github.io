@@ -1,6 +1,6 @@
 ---
 layout: post
-repolink: "https://github.com/julz0815/veracode_flaw_importer)"
+repolink: "https://github.com/julz0815/veracode_flaw_importer"
 title: "Veracode Flaw Importer"
 description: "GitHub Action to import static policy findings to GitHub Security Code Scanning Alerts."
 author: "julz0815"
