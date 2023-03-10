@@ -44,7 +44,7 @@ jobs:
           ls -la
           git config --global user.email "jtotzekhallhuber@veracode.com"
           git config --global user.name "Julian Totzek-Hallhuber"
-          git add *
+          git add -A
           git commit -am "Update page templates"
           git status
           git push
