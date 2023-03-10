@@ -46,42 +46,33 @@ jobs:
           git config --global user.name "Julian Totzek-Hallhuber"
           git add -A
           git commit -am "Update page templates"
-          git status
           git push
 
+      - name: build with jekyll
+        uses: actions/jekyll-build-pages@v1
+        with: 
+          source: .
+          destination: ./_site
+          future: false
+          verbose: true
 
-  build_pages:
-      needs: create_pages
-      runs-on: ubuntu-latest
-      steps: 
-        - name: Checkout code
-          uses: actions/checkout@v3
+      - name: uplaod pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site
+          name: github-pages
+          retention-days: 1
 
-        - name: build with jekyll
-          uses: actions/jekyll-build-pages@v1
-          with: 
-            source: .
-            destination: ./_site
-            future: false
-            verbose: true
-
-        - name: uplaod pages artifact
-          uses: actions/upload-pages-artifact@v1
-          with:
-            path: ./_site
-            name: github-pages
-            retention-days: 1
-
-        - name: report build status
-          env: 
-            GH_TOKEN: ${{ github.token }}
-          run: |
-            gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
-            -F github_run_id="$GITHUB_RUN_ID" \
-            -F conclusion="$CONCLUSION"
+      - name: report build status
+        env: 
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/telemetry" \
+          -F github_run_id="$GITHUB_RUN_ID" \
+          -F conclusion="$CONCLUSION"
 
   deploy_pages:
-    needs: build_pages
+    needs: create_pages
     runs-on: ubuntu-latest
     permissions:
         pages: write
