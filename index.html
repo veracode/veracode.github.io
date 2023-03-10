@@ -19,79 +19,241 @@ layout: default
       font-weight: bold;
     }
   </style>
-  <div id="sdk" class="content-type">
-    <h1>SDK</h1>
+  <div id="github-actions" class="content-type">
+    <h1>GitHub Actions</h1>
 
     <div class="row">
-      {% for project in site.projects %} {% if project.content-type == "sdk" %}
-      {% include project.html project=project %} {% endif %} {% endfor %}
+      {% for actions in site.github_actions %}
+        {% if actions.content-type == "github_actions" %}
+          {% include actions.html project=actions %}
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 
   <br />
 
-  <div id="cicd" class="content-type">
+  <div id="documentation" class="content-type">
+    <h1>Documentations</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.documentations %} {% if project.content-type == "documentations"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+
+  <br />
+
+  <div id="community_projects" class="content-type">
+    <h1>Community Projects</h1>
+  </div>
+  <hr>
+
+  <div id="automating_common_veracode_platform_tasks" class="content-type">
+    <h1>Automating common Veracode Platform tasks</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.automating_common_veracode_platform_tasks %} {% if project.content-type == "automating_common_veracode_platform_tasks"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="developer_tools" class="content-type">
+    <h1 font-color="black">Developer Tools</h1>
+  </div>
+  <br />
+  <div id="auto_packagers" class="content-type">
+    <h1>Auto Packagers</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.auto_packagers_for_sast %} {% if project.content-type == "auto_packagers_for_sast"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <div id="ci_cd" class="content-type">
     <h1>CI/CD</h1>
 
-    <div class="row">
-      {% for project in site.projects %} {% if project.content-type == "ci/cd"
+    <div class="row" class="content-type">
+      {% for project in site.ci_cd %} {% if project.content-type == "ci_cd"
       %} {% include project.html project=project %} {% endif %} {% endfor %}
     </div>
   </div>
-
   <br />
+  <div id="azure_devops" class="content-type">
+    <h1>Azure DevOps</h1>
 
-  <div id="ide" class="content-type">
-    <h1>IDE</h1>
-
-    <div class="row">
-      {% for project in site.projects %} {% if project.content-type == "ide" %}
-      {% include project.html project=project %} {% endif %} {% endfor %}
-    </div>
-  </div>
-
-  <br />
-
-  <div id="workflow" class="content-type">
-    <h1>Workflow</h1>
-
-    <div class="row">
-      {% for project in site.projects %} {% if project.content-type ==
-      "workflow" %} {% include project.html project=project %} {% endif %} {%
-      endfor %}
-    </div>
-  </div>
-
-  <br />
-  <div id="results" class="content-type">
-    <h1>Results</h1>
-
-    <div class="row">
-      {% for project in site.projects %} {% if project.content-type == "results"
+    <div class="row" class="content-type">
+      {% for project in site.azure_devops %} {% if project.content-type == "azure_devops"
       %} {% include project.html project=project %} {% endif %} {% endfor %}
     </div>
   </div>
-
   <br />
+  <div id="github" class="content-type">
+    <h1>GitHub</h1>
 
-  <div id="scripts" class="content-type">
-    <h1>Scripts</h1>
-
-    <div class="row">
-      {% for project in site.projects %} {% if project.content-type == "scripts"
+    <div class="row" class="content-type">
+      {% for project in site.github %} {% if project.content-type == "github"
       %} {% include project.html project=project %} {% endif %} {% endfor %}
     </div>
   </div>
-
   <br />
+  <div id="build_tools" class="content-type">
+    <h1>Build tools</h1>
 
-  <div id="resources" class="content-type">
-    <h1>Resources</h1>
+    <div class="row" class="content-type">
+      {% for project in site.build_tools %} {% if project.content-type == "build_tools"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <div id="ides" class="content-type">
+    <h1>IDE's</h1>
 
-    <div class="row">
-      {% for project in site.projects %} {% if project.content-type ==
-      "resources" %} {% include project.html project=project %} {% endif %} {%
-      endfor %}
+    <div class="row" class="content-type">
+      {% for project in site.ides %} {% if project.content-type == "ides"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <div id="api_testing_tools" class="content-type">
+    <h1>API Testing Tools</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.api_testing_tools %} {% if project.content-type == "api_testing_tools"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <div id="other" class="content-type">
+    <h1>Other</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.other %} {% if project.content-type == "other"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="pipeline_scan_projects" class="content-type">
+    <h1>Pipeline Scan Projects</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.pipeline_scan_projects %} {% if project.content-type == "pipeline_scan_projects"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="dynamic_analysis_projects" class="content-type">
+    <h1>Dynamic Analysis Projects</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.dynamic_analysis_projects %} {% if project.content-type == "dynamic_analysis_projects"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="results_collection_and_display" class="content-type">
+    <h1>Results Collection and Display</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.results_collection_and_display %} {% if project.content-type == "results_collection_and_display"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="user_provisioning_management_and_deprovisioning" class="content-type">
+    <h1>User Provisioning, Management and Deprovisioning </h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.user_provisioning_management_and_deprovisioning %} {% if project.content-type == "user_provisioning_management_and_deprovisioning"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="application_vulnerability_correlation" class="content-type">
+    <h1>Application Vulnerability Correlation</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.application_vulnerability_correlation %} {% if project.content-type == "application_vulnerability_correlation"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="hmac_signing_libraries" class="content-type">
+    <h1>HMAC Signing Libraries</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.hmac_signing_libraries %} {% if project.content-type == "hmac_signing_libraries"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="api_wrappers" class="content-type">
+    <h1>API Wrappers</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.api_wrappers %} {% if project.content-type == "api_wrappers"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="other_integrations" class="content-type">
+    <h1>Other Integrations</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.other_integrations %} {% if project.content-type == "other_integrations"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="secure_coding_examples" class="content-type">
+    <h1>Secure Codeing Examples</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.secure_coding_examples %} {% if project.content-type == "secure_coding_examples"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="insecure_applications" class="content-type">
+    <h1>Insecure Applications</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.insecure_applications %} {% if project.content-type == "insecure_applications"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
+    </div>
+  </div>
+  <br />
+  <br />
+  <hr>
+  <div id="automating_security_labs_tasks" class="content-type">
+    <h1>Automating Security Labs Tasks</h1>
+
+    <div class="row" class="content-type">
+      {% for project in site.automating_security_labs_tasks %} {% if project.content-type == "automating_security_labs_tasks"
+      %} {% include project.html project=project %} {% endif %} {% endfor %}
     </div>
   </div>
 </div>

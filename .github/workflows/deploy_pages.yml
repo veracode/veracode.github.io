@@ -3,8 +3,55 @@ on:
     branches: [master]
 
 jobs:
+  create_pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: delete old files
+        run: |
+          shopt -s extglob
+          rm -rf _automating_common_veracode_platform_tasks
+          rm -rf _auto_packagers_for_sast
+          rm -rf _ci_cd
+          rm -rf _azure_devops
+          rm -rf _github
+          rm -rf _build_tools
+          rm -rf _ides
+          rm -rf _api_testing_tools
+          rm -rf _other
+          rm -rf _pipeline_scan_projects
+          rm -rf _dynamic_analysis_projects
+          rm -rf _results_collection_and_display
+          rm -rf _user_provisioning_management_and_deprovisioning
+          rm -rf _application_vulnerability_correlation
+          rm -rf _hmac_signing_libraries
+          rm -rf _api_wrappers
+          rm -rf _other_integrations
+          rm -rf _secure_coding_examples
+          rm -rf _insecure_applications
+          rm -rf _automating_security_labs_tasks
+          ls -la
+
+      - name: create new page templates
+        run: |
+          npm i
+          node rewrite_md.js
+
+      - name: commit and push back to repo
+        run: |
+          ls -la
+          git config --global user.email "jtotzekhallhuber@veracode.com"
+          git config --global user.name "Julian Totzek-Hallhuber"
+          git add *
+          git commit -am "Update page templates"
+          git status
+          git push
+
+
   build_pages:
-      #needs: create_pages
+      needs: create_pages
       runs-on: ubuntu-latest
       steps: 
         - name: Checkout code
@@ -46,7 +93,6 @@ jobs:
         - name: deploy pages
           uses: actions/deploy-pages@v1
           with:
-            #emit_telemetry: false
             timeout: 600000
             error_count: 10
             reporting_interval: 5000

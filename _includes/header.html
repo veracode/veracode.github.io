@@ -1,160 +1,58 @@
 <header class="site-header">
-  <div class="wrapper">
-    <div class="row">
-      <div class="col-md-12">
-        <style>
-          #banner-image {
-            width: 400px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-          }
-        </style>
-        <img id="banner-image" src="{{ "/assets/images/Logo_whiteonblack.png" |
-        prepend: site.baseurl }}" />
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-md-12">
+          <style>
+            #banner-image {
+              width: 400px;
+              margin-top: 30px;
+              margin-bottom: 30px;
+            }
+          </style>
+          <img id="banner-image" src="{{ "/assets/images/Logo_whiteonblack.png" |
+          prepend: site.baseurl }}" />
+        </div>
       </div>
-    </div>
-    <style>
-      #title-image {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
-    <div class="row">
-      <div class="col-md-4">
-        <img id="title-image" src="{{ "/assets/images/header_icon.png" |
-        prepend: site.baseurl }}" />
-      </div>
-      <div class="col-md-8">
-        <style>
-          #h1 {
-            text-align: center;
-            color: white;
-            margin-top: 30px;
-          }
-
-          #p1 {
-            color: white;
-            text-align: center;
-          }
-        </style>
-        <h1 id="h1">Open Source Projects</h1>
-        <p id="p1">
-          A collection of useful open source projects that integrate with the
-          Veracode APIs to automate scanning, results retrieval and other tasks.
-          Please take a look at the
-          <a
-            style="font-weight: bold; color: white"
-            href="https://github.com/veracode/veracode.github.io/blob/master/contributing.md"
-            >Contribution Guidlines</a
-          >
-          if you would like to contribute!
-        </p>
-      </div>
-    </div>
-    <style>
-      .menu-header {
-        color: #e1e369 !important;
-        font-weight: bold;
-        text-decoration: none !important;
-        font-size: 22px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-
-      .menu-subitem {
-        color: #e1e369 !important;
-        text-decoration: none !important;
-        font-size: 15px;
-        margin-left: 5px;
-      }
-
-      .menu-item p {
-        text-align: center;
-      }
-
-      li {
-        list-style: none;
-      }
-
-      li:hover {
-        text-decoration: underline;
-      }
-    </style>
-    <div class="row" style="margin-top: 40px">
-      <div class="col-md-3">
-        <ul>
-          <li><a class="menu-header" href="#sdk">SDK</a></li>
-          <li><a class="menu-subitem" href="#sdk">API Wrappers</a></li>
-          <li><a class="menu-subitem" href="#sdk">CLI</a></li>
-          <li><a class="menu-subitem" href="#sdk">HMAC Signing</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul>
-          <li><a class="menu-header" href="#ide">IDE</a></li>
-          <li><a class="menu-subitem" href="#ide">VSCode</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul>
-          <li><a class="menu-header" href="#workflow">Workflow</a></li>
-          <li><a class="menu-subitem" href="#workflow">Notifications</a></li>
-          <li><a class="menu-subitem" href="#workflow">Slack</a></li>
-          <li><a class="menu-subitem" href="#workflow">Flow</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul>
-          <li><a class="menu-header" href="#scripts">Scripts</a></li>
-          <li><a class="menu-subitem" href="#sdk">Platform Tasks</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row" style="margin-top: 20px">
-      <div class="col-md-3">
-        <ul>
-          <li><a class="menu-header" href="#cicd">CI/CD</a></li>
-          <li><a class="menu-subitem" href="#cicd">Ansible</a></li>
-          <li><a class="menu-subitem" href="#cicd">Azure DevOps</a></li>
-          <li><a class="menu-subitem" href="#cicd">Bamboo</a></li>
-          <li><a class="menu-subitem" href="#cicd">Bitrise CI</a></li>
-          <li><a class="menu-subitem" href="#cicd">Circle CI</a></li>
-          <li><a class="menu-subitem" href="#cicd">Concourse CI</a></li>
-          <li><a class="menu-subitem" href="#cicd">Docker</a></li>
-          <li><a class="menu-subitem" href="#cicd">GitLab</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul>
-          <li>
-            <a class="menu-header" href="#sdk" style="visibility: hidden"
-              >...</a
+      <style>
+        #title-image {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      </style>
+      <div class="row">
+        <div class="col-md-4">
+          <img id="title-image" src="{{ "/assets/images/header_icon.png" |
+          prepend: site.baseurl }}" />
+        </div>
+        <div class="col-md-8">
+          <style>
+            #h1 {
+              text-align: center;
+              color: white;
+              margin-top: 30px;
+            }
+  
+            #p1 {
+              color: white;
+              text-align: center;
+            }
+          </style>
+          <h1 id="h1">Open Source Projects</h1>
+          <p id="p1">
+            A collection of useful open source projects that integrate with the
+            Veracode APIs to automate scanning, results retrieval and other tasks.
+            Please take a look at the
+            <a
+              style="font-weight: bold; color: white"
+              href="https://github.com/veracode/veracode.github.io/blob/master/contributing.md"
+              >Contribution Guidlines</a
             >
-          </li>
-          <li><a class="menu-subitem" href="#cicd">GitHub</a></li>
-          <li><a class="menu-subitem" href="#cicd">Gradle</a></li>
-          <li><a class="menu-subitem" href="#cicd">Jenkins</a></li>
-          <li><a class="menu-subitem" href="#cicd">sbt</a></li>
-          <li><a class="menu-subitem" href="#cicd">Travis</a></li>
-          <li><a class="menu-subitem" href="#cicd">Xebia Labs</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul>
-          <li><a class="menu-header" href="#results">Results</a></li>
-          <li><a class="menu-subitem" href="#results">Collection</a></li>
-          <li><a class="menu-subitem" href="#results">Transformation</a></li>
-          <li><a class="menu-subitem" href="#results">Display</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <ul>
-          <li><a class="menu-header" href="#resources">Resources</a></li>
-          <li><a class="menu-subitem" href="#resources">Secure Coding</a></li>
-          <li><a class="menu-subitem" href="#resources">Insecure Apps</a></li>
-        </ul>
+            if you would like to contribute!
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+</br>
+</br>
 </header>

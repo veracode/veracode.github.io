@@ -1,0 +1,53 @@
+<div class="col-md-6">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>
+        <a class="post-link" href="{{ include.project.repolink }}"
+          >{{ include.project.title }}</a
+        >
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    {% if include.project.language != "" %}
+    <div class="col-sm-2">
+      <span
+        ><i
+          style="font-size: 40px"
+          class="fab fa-{{ include.project.language }}"
+        ></i
+      ></span>
+    </div>
+    {% endif %}
+    <div class="col-sm-9">
+      {% if include.project.repo == "github" %}
+      <a class="post-link" href="{{ include.project.repolink }}/stargazers">
+        <span><i style="font-size: 35px" class="fa fa-star"></i></span>
+        <span id="{{ include.project.repo_title }}_count"
+          ><i style="font-size: 40px"></i
+        ></span>
+        <script>
+          $(function () {
+            let title = "#{{ include.project.repo_title }}_count";
+            let github_stars = "https://api.github.com/repos/{{ include.project.author }}/{{ include.project.repo_title }}/stargazers";
+            if (localStorage.getItem(title)) {
+              var count = localStorage.getItem(title);
+              $(title).text(count);
+            } else {
+              $.getJSON(github_stars, function (response) {
+                  $(title).text(response.length);
+                  localStorage.setItem(title, response.length);
+                });
+            }
+          });
+        </script>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p style="margin-bottom: 2px">{{ include.project.description }}</p>
+    </div>
+  </div>
+</div>

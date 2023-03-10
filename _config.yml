@@ -3,7 +3,7 @@ title: Veracode Open Source
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   A collection of useful open source projects that integrate with the Veracode APIs to automate scanning, results retrieval and other tasks.
-url: "http://veracode.github.io" # the base hostname & protocol for your site
+url: "https://crispy-disco-89bd2f0a.pages.github.io/" # the base hostname & protocol for your site
 github_username: veracode
 twitter_username: VeracodeDevs
 
@@ -12,4 +12,25 @@ markdown: kramdown
 permalink: /:title:output_ext
 
 collections:
-  - projects
+  - github_actions
+  - documentations
+  - automating_common_veracode_platform_tasks
+  - auto_packagers_for_sast
+  - ci_cd
+  - azure_devops
+  - github
+  - build_tools
+  - ides
+  - api_testing_tools
+  - other
+  - pipeline_scan_projects
+  - dynamic_analysis_projects
+  - results_collection_and_display
+  - user_provisioning_management_and_deprovisioning
+  - application_vulnerability_correlation
+  - hmac_signing_libraries
+  - api_wrappers
+  - other_integrations
+  - secure_coding_examples
+  - insecure_applications
+  - automating_security_labs_tasks
