@@ -305,4 +305,5 @@ These projects are community contributed and not supported by Veracode. For a li
 
 - [Security Labs Scripts](https://github.com/gmdavef/security-labs-scripts) ([Dave Ferguson](https://github.com/gmdavef)) - Python scripts to automate various administrative tasks in Veracode Security Labs.
 
-- [Security Labs Scripts New](https://github.com/gmdavef/security-labs-scripts) ([Dave Ferguson Junior](https://github.com/gmdavef)) - Python scripts to automate various administrative tasks in Veracode Security Labs.
+
+
