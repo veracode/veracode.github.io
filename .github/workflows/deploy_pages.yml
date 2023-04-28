@@ -51,9 +51,8 @@ jobs:
       - name: commit and push back to repo
         run: |
           ls -la
-          git config --global user.name "julz0815"
-          git config --global user.email "j.totzek@gmail.com"
           git add -A
+          git status
           git commit -am "Update page templates"
           git push
 
