@@ -55,6 +55,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git add -A
           git status
+          git-config --get-all
           git commit -am "Update page templates"
           git push -f origin master
 
