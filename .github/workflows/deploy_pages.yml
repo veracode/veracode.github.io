@@ -2,7 +2,7 @@ on:
   push:
     branches: [master]
 permissions:
-  actions: read|write
+  actions: write
 
 jobs:
   create_pages:
