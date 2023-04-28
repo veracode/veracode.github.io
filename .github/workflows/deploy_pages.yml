@@ -51,6 +51,8 @@ jobs:
       - name: commit and push back to repo
         run: |
           ls -la
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git add -A
           git status
           git commit -am "Update page templates"
