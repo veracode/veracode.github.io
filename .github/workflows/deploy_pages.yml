@@ -2,7 +2,11 @@ on:
   push:
     branches: [master]
 permissions:
-  actions: write
+  id-token: write
+  actions: read
+  contents: read
+  pull-requests: read
+  security-events: write
 
 jobs:
   create_pages:
