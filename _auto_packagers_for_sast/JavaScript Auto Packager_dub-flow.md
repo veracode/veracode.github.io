@@ -1,10 +1,10 @@
 ---
 layout: post
-repolink: "https://github.com/fw10/veracode-javascript-packager"
+repolink: "https://github.com/dub-flow/veracode-javascript-packager"
 title: "JavaScript Auto Packager"
 description: "CLI tool to automatically package a `JavaScript` application for Veracode Static Analysis"
-author: "fw10"
-author-link: "https://github.com/fw10/"
+author: "dub-flow"
+author-link: "https://github.com/dub-flow/"
 content-type: "auto_packagers_for_sast"
 repo: "github"
 repo_title: "JavaScript Auto Packager"
