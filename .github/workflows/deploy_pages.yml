@@ -67,7 +67,7 @@ jobs:
           verbose: true
 
       - name: uplaod pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: ./_site
           name: github-pages
